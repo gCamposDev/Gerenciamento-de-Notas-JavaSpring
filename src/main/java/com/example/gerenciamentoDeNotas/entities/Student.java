@@ -1,7 +1,15 @@
 package com.example.gerenciamentoDeNotas.entities;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table
 public class Student {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long student_id;
+
     private String name;
     private String email;
     private Integer phone;

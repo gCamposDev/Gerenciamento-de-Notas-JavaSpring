@@ -1,6 +1,14 @@
 package com.example.gerenciamentoDeNotas.entities;
 
+import jakarta.persistence.*;
+import org.springframework.boot.autoconfigure.batch.BatchTransactionManager;
+
+@Entity
+@Table
 public class Subject {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long subject_id;
     private String name;
     private Integer academic_load;
