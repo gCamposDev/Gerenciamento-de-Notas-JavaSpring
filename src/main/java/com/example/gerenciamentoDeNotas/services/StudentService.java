@@ -16,4 +16,9 @@ public class StudentService {
     public List<Student> findAllStudents(){
         return studentRepository.findAll();
     }
+
+    public Student findStudentById(Long id){
+        return studentRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Aluno não encontrado"));
+    }
 }
