@@ -21,4 +21,9 @@ public class StudentService {
         return studentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Aluno não encontrado"));
     }
+
+    public List<Student> findAllStudentsByClass(String class_){
+        return studentRepository.findAllStudentsByClass(class_);
+
+    }
 }
