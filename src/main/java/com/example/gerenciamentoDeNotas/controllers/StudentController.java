@@ -39,5 +39,10 @@ public class StudentController {
         return studentService.updateClassByName(name,class_);
     }
 
+    @DeleteMapping
+    public void deleteStudentByName(@RequestParam String name){
+        studentService.deleteStudentByName(name);
+    }
+
 
 }

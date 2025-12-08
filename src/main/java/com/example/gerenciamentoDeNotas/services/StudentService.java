@@ -32,11 +32,15 @@ public class StudentService {
     }
 
     public Student updateClassByName(String name, String class_){
-        Student entity = studentRepository.findByName(name);
+        Student entity = studentRepository.findStudentByName(name);
         if(class_ != null){
             entity.setClass_(class_);
             studentRepository.save(entity);
         }
         return entity;
+    }
+
+    public void deleteStudentByName(String name){
+        studentRepository.delete(studentRepository.findStudentByName(name));
     }
 }

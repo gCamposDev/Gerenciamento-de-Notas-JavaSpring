@@ -15,6 +15,7 @@ public interface StudentRepository extends JpaRepository<Student,Long> {
     @Query(nativeQuery = true, value = """
         SELECT * FROM student WHERE name = :name
         """)
-    Student findByName(String name);
+    Student findStudentByName(String name);
+
 }
 
