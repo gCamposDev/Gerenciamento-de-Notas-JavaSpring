@@ -30,4 +30,13 @@ public class StudentService {
     public Student createStudent(Student student){
         return studentRepository.save(student);
     }
+
+    public Student updateClassByName(String name, String class_){
+        Student entity = studentRepository.findByName(name);
+        if(class_ != null){
+            entity.setClass_(class_);
+            studentRepository.save(entity);
+        }
+        return entity;
+    }
 }

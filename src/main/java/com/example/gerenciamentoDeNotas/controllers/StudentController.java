@@ -34,5 +34,10 @@ public class StudentController {
         return studentService.createStudent(student);
     }
 
+    @PutMapping
+    public Student updateClassByName(@RequestParam String name, @RequestParam String class_){
+        return studentService.updateClassByName(name,class_);
+    }
+
 
 }

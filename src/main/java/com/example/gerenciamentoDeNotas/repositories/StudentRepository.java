@@ -11,5 +11,10 @@ public interface StudentRepository extends JpaRepository<Student,Long> {
         SELECT * FROM student WHERE class_ = :class_
         """)
     List<Student> findAllStudentsByClass(String class_);
+
+    @Query(nativeQuery = true, value = """
+        SELECT * FROM student WHERE name = :name
+        """)
+    Student findByName(String name);
 }
 
