@@ -33,3 +33,17 @@ INSERT INTO student(name, email, phone, class_) VALUES ('Arthur Pires', 'arthur.
 INSERT INTO student(name, email, phone, class_) VALUES ('Bianca Torres', 'bianca.torres@example.com', '31991234528', '3B');
 INSERT INTO student(name, email, phone, class_) VALUES ('Caio Barcellos', 'caio.barcellos@example.com', '31991234529', '3B');
 INSERT INTO student(name, email, phone, class_) VALUES ('Daniela Moura', 'daniela.moura@example.com', '31991234530', '3B');
+
+INSERT INTO subject(name, academic_load) VALUES ('Português', 120);
+INSERT INTO subject(name, academic_load) VALUES ('Matemática', 120);
+INSERT INTO subject(name, academic_load) VALUES ('Biologia', 80);
+INSERT INTO subject(name, academic_load) VALUES ('Física', 80);
+INSERT INTO subject(name, academic_load) VALUES ('Química', 80);
+INSERT INTO subject(name, academic_load) VALUES ('História', 80);
+INSERT INTO subject(name, academic_load) VALUES ('Geografia', 80);
+INSERT INTO subject(name, academic_load) VALUES ('Sociologia', 40);
+INSERT INTO subject(name, academic_load) VALUES ('Filosofia', 40);
+INSERT INTO subject(name, academic_load) VALUES ('Inglês', 80);
+INSERT INTO subject(name, academic_load) VALUES ('Artes', 40);
+INSERT INTO subject(name, academic_load) VALUES ('Educação Física', 40);
+INSERT INTO subject(name, academic_load) VALUES ('Espanhol', 40);
