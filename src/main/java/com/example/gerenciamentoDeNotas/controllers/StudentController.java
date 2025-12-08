@@ -20,13 +20,18 @@ public class StudentController {
     }
 
     @GetMapping("/{id}")
-    public Student findStundentById(@PathVariable Long id){
+    public Student findStudentById(@PathVariable Long id){
         return studentService.findStudentById(id);
     }
 
     @GetMapping("/class")
     public List<Student> findAllStudentsByClass(@RequestParam String class_){
         return studentService.findAllStudentsByClass(class_);
+    }
+
+    @PostMapping
+    public Student createStudent(@RequestBody Student student){
+        return studentService.createStudent(student);
     }
 
 

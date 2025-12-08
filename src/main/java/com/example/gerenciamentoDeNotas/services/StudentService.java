@@ -26,4 +26,8 @@ public class StudentService {
         return studentRepository.findAllStudentsByClass(class_);
 
     }
+
+    public Student createStudent(Student student){
+        return studentRepository.save(student);
+    }
 }
