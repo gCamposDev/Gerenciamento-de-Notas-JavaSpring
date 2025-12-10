@@ -3,6 +3,7 @@ package com.example.gerenciamentoDeNotas.services;
 import com.example.gerenciamentoDeNotas.dtos.RegisterGradeDTO;
 import com.example.gerenciamentoDeNotas.entities.Student;
 import com.example.gerenciamentoDeNotas.entities.Student_Subject;
+import com.example.gerenciamentoDeNotas.entities.Subject;
 import com.example.gerenciamentoDeNotas.repositories.Student_SubjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ public class Student_SubjectService {
     @Autowired
     private Student_SubjectRepository studentSubjectRepository;
 
+    //Injeto studentService e subjectService pois preciso de métodos presentes neles.
     @Autowired
     private StudentService studentService;
 
@@ -20,10 +22,13 @@ public class Student_SubjectService {
     private SubjectService subjectService;
 
     public void registerGrade(RegisterGradeDTO registerGradeDTO){
-        Student_Subject studentSubject = new Student_Subject();
-
+        //Busco as duas entidades no banco para saber o ID.
         Student student = studentService.findStudentByName(registerGradeDTO.getStudentName());
+        Subject subject = subjectService.findSubjectByName(registerGradeDTO.getSubjectName());
+        
+        Student_Subject studentSubject = new Student_Subject(student,subject, registerGradeDTO.getGrade(), registerGradeDTO.getAbsence());
 
+        studentSubjectRepository.save(studentSubject);
 
     }
 }

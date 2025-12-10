@@ -1,17 +1,17 @@
 package com.example.gerenciamentoDeNotas.dtos;
 
 public class RegisterGradeDTO {
-    private String subject;
+    private String subjectName;
     private String studentName;
     private Double grade;
     private Integer absence;
 
-    public String getSubject() {
-        return subject;
+    public String getSubjectName() {
+        return subjectName;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
     }
 
     public String getStudentName() {

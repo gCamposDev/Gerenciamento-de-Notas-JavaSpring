@@ -2,6 +2,8 @@ package com.example.gerenciamentoDeNotas.entities;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table
 public class Student {
@@ -65,5 +67,17 @@ public class Student {
 
     public void setClass_(String class_) {
         this.class_ = class_;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Objects.equals(student_id, student.student_id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(student_id);
     }
 }

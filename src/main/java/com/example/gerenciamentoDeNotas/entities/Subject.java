@@ -3,6 +3,8 @@ package com.example.gerenciamentoDeNotas.entities;
 import jakarta.persistence.*;
 import org.springframework.boot.autoconfigure.batch.BatchTransactionManager;
 
+import java.util.Objects;
+
 @Entity
 @Table
 public class Subject {
@@ -45,5 +47,17 @@ public class Subject {
 
     public void setAcademic_load(Integer academic_load) {
         this.academic_load = academic_load;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Subject subject = (Subject) o;
+        return Objects.equals(subject_id, subject.subject_id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(subject_id);
     }
 }
