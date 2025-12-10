@@ -22,5 +22,7 @@ public class SubjectService {
                 .orElseThrow(() -> new RuntimeException("Disciplina não encontrada"));
     }
 
-
+    public Subject findSubjectByName(String name){
+        return subjectRepository.findSubjectByName(name);
+    }
 }
