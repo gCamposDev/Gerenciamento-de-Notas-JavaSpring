@@ -5,6 +5,7 @@ import com.example.gerenciamentoDeNotas.repositories.SubjectRepository;
 import com.example.gerenciamentoDeNotas.services.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,4 +22,25 @@ public class SubjectController {
     public List<Subject> findAllSubjects(){
         return subjectService.findAllSubjects();
     }
+
+    @GetMapping("/{id}")
+    public Subject findSubjectById(@PathVariable Long id){
+        return subjectService.findSubjectById(id);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

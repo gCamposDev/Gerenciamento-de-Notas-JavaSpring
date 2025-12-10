@@ -16,4 +16,11 @@ public class SubjectService {
     public List<Subject> findAllSubjects(){
         return subjectRepository.findAll();
     }
+
+    public Subject findSubjectById(Long id){
+        return subjectRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Disciplina não encontrada"));
+    }
+
+
 }
