@@ -22,6 +22,11 @@ public class StudentService {
                 .orElseThrow(() -> new RuntimeException("Aluno não encontrado"));
     }
 
+    public Student findStudentByName(String name){
+        return studentRepository.findStudentByName(name);
+
+    }
+
     public List<Student> findAllStudentsByClass(String class_){
         return studentRepository.findAllStudentsByClass(class_);
 
@@ -32,7 +37,7 @@ public class StudentService {
     }
 
     public Student updateClassByName(String name, String class_){
-        Student entity = studentRepository.findStudentByName(name);
+        Student entity = findStudentByName(name);
         if(class_ != null){
             entity.setClass_(class_);
             studentRepository.save(entity);
