@@ -20,17 +20,23 @@ public class StudentSubjectController {
     }
 
     @GetMapping
-        public List<StudentPerformanceDTO> findAllStudentPerformances(){
-            return studentSubjectService.findAllStudentPerformances();
+    public List<StudentPerformanceDTO> findAllStudentPerformances(){
+        return studentSubjectService.findAllStudentPerformances();
     }
 
     @GetMapping("/{id}")
-        public List<StudentPerformanceDTO> findStudentPerformanceByStudentId(@PathVariable Long id){
-            return studentSubjectService.findStudentPerformanceByStudentId(id);
+    public List<StudentPerformanceDTO> findStudentPerformanceByStudentId(@PathVariable Long id){
+        return studentSubjectService.findStudentPerformanceByStudentId(id);
     }
 
-    @GetMapping("/name")
-        public List<StudentPerformanceDTO> findStudentPerformanceByStudentName(@RequestParam String name){
-            return studentSubjectService.findStudentPerformanceByStudentName(name);
+    @GetMapping(params = "name")
+    public List<StudentPerformanceDTO> findStudentPerformanceByStudentName(@RequestParam String name){
+        return studentSubjectService.findStudentPerformanceByStudentName(name);
     }
+
+    @GetMapping(params = {"nameStudent","nameSubject"})
+    public StudentPerformanceDTO findStudentPerformanceByStudentNameAndSubjectName(@RequestParam String nameStudent, @RequestParam String nameSubject){
+        return studentSubjectService.findStudentPerformanceByStudentNameAndSubjectName(nameStudent,nameSubject);
+    }
+
 }

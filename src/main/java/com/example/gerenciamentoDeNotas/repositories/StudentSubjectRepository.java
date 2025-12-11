@@ -30,4 +30,12 @@ public interface StudentSubjectRepository extends JpaRepository<StudentSubject, 
         WHERE student.name = :name
         """)
     List<StudentPerformanceDTO> findStudentPerformanceByStudentName(String name);
+
+    @Query(nativeQuery = true, value = """
+        SELECT student.name AS student, subject.name AS subject, grade, absence FROM student_subject
+        INNER JOIN student ON student.student_id = student_subject.student_id
+        INNER JOIN subject ON subject.subject_id = student_subject.subject_id
+        WHERE student.name = :nameStudent AND subject.name = :nameSubject
+        """)
+    StudentPerformanceDTO findStudentPerformanceByStudentNameAndSubjectName(String nameStudent, String nameSubject);
 }

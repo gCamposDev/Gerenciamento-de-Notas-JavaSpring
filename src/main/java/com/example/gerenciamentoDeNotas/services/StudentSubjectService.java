@@ -23,27 +23,30 @@ public class StudentSubjectService {
     @Autowired
     private SubjectService subjectService;
 
-    public void registerStudentPerformance(StudentPerformanceDTO StudentPerformanceDTO){
+    public void registerStudentPerformance(StudentPerformanceDTO StudentPerformanceDTO) {
         //Busco as duas entidades no banco para saber o ID.
         Student student = studentService.findStudentByName(StudentPerformanceDTO.getStudentName());
         Subject subject = subjectService.findSubjectByName(StudentPerformanceDTO.getSubjectName());
 
-        StudentSubject studentSubject = new StudentSubject(student,subject, StudentPerformanceDTO.getGrade(), StudentPerformanceDTO.getAbsence());
+        StudentSubject studentSubject = new StudentSubject(student, subject, StudentPerformanceDTO.getGrade(), StudentPerformanceDTO.getAbsence());
 
         studentSubjectRepository.save(studentSubject);
 
     }
 
-    public List<StudentPerformanceDTO> findAllStudentPerformances(){
+    public List<StudentPerformanceDTO> findAllStudentPerformances() {
         return studentSubjectRepository.findAllStudentPerformances();
     }
 
-    public List<StudentPerformanceDTO> findStudentPerformanceByStudentId(Long id){
+    public List<StudentPerformanceDTO> findStudentPerformanceByStudentId(Long id) {
         return studentSubjectRepository.findStudentPerformanceByStudentId(id);
     }
 
-    public List<StudentPerformanceDTO> findStudentPerformanceByStudentName(String name){
+    public List<StudentPerformanceDTO> findStudentPerformanceByStudentName(String name) {
         return studentSubjectRepository.findStudentPerformanceByStudentName(name);
     }
 
+    public StudentPerformanceDTO findStudentPerformanceByStudentNameAndSubjectName(String nameStudent, String nameSubject) {
+        return studentSubjectRepository.findStudentPerformanceByStudentNameAndSubjectName(nameStudent, nameSubject);
+    }
 }
