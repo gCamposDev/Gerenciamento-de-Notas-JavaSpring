@@ -37,4 +37,13 @@ public class StudentSubjectService {
     public List<StudentPerformanceDTO> findAllStudentPerformances(){
         return studentSubjectRepository.findAllStudentPerformances();
     }
+
+    public List<StudentPerformanceDTO> findStudentPerformanceByStudentId(Long id){
+        return studentSubjectRepository.findStudentPerformanceByStudentId(id);
+    }
+
+    public List<StudentPerformanceDTO> findStudentPerformanceByStudentName(String name){
+        return studentSubjectRepository.findStudentPerformanceByStudentName(name);
+    }
+
 }
