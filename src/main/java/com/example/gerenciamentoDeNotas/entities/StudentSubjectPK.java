@@ -7,7 +7,7 @@ import jakarta.persistence.ManyToOne;
 import java.util.Objects;
 
 @Embeddable
-public class Student_SubjectPK {
+public class StudentSubjectPK {
 
     @ManyToOne
     @JoinColumn(name = "student_id")
@@ -17,11 +17,11 @@ public class Student_SubjectPK {
     @JoinColumn(name = "subject_id")
     private Subject subject;
 
-    public Student_SubjectPK(){
+    public StudentSubjectPK(){
 
     }
 
-    public Student_SubjectPK(Student student, Subject subject) {
+    public StudentSubjectPK(Student student, Subject subject) {
         this.student = student;
         this.subject = subject;
     }
@@ -45,7 +45,7 @@ public class Student_SubjectPK {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Student_SubjectPK that = (Student_SubjectPK) o;
+        StudentSubjectPK that = (StudentSubjectPK) o;
         return Objects.equals(student, that.student) && Objects.equals(subject, that.subject);
     }
 

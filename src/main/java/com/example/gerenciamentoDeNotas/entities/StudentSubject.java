@@ -6,19 +6,19 @@ import java.util.Objects;
 
 @Entity
 @Table
-public class Student_Subject {
+public class StudentSubject {
 
     @EmbeddedId
-    private Student_SubjectPK id = new Student_SubjectPK();
+    private StudentSubjectPK id = new StudentSubjectPK();
 
     private Double grade;
     private Integer absence;
 
-    public Student_Subject(){
+    public StudentSubject(){
 
     }
 
-    public Student_Subject(Student student, Subject subject, Double grade, Integer absence) {
+    public StudentSubject(Student student, Subject subject, Double grade, Integer absence) {
         this.id.setStudent(student);
         this.id.setSubject(subject);
         this.grade = grade;
@@ -28,7 +28,7 @@ public class Student_Subject {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Student_Subject that = (Student_Subject) o;
+        StudentSubject that = (StudentSubject) o;
         return Objects.equals(id, that.id);
     }
 

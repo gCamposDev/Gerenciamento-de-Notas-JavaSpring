@@ -1,10 +1,21 @@
 package com.example.gerenciamentoDeNotas.dtos;
 
-public class RegisterGradeDTO {
+public class StudentPerformanceDTO {
     private String subjectName;
     private String studentName;
     private Double grade;
     private Integer absence;
+
+    public StudentPerformanceDTO(){
+
+    }
+
+    public StudentPerformanceDTO(String subjectName, String studentName, Double grade, Integer absence) {
+        this.subjectName = subjectName;
+        this.studentName = studentName;
+        this.grade = grade;
+        this.absence = absence;
+    }
 
     public String getSubjectName() {
         return subjectName;
