@@ -35,7 +35,7 @@ public class StudentSubjectController {
     }
 
     @GetMapping(params = {"nameStudent","nameSubject"})
-    public StudentPerformanceDTO findStudentPerformanceByStudentNameAndSubjectName(@RequestParam String nameStudent, @RequestParam String nameSubject){
+    public StudentPerformanceDTO findStudentPerformanceByStudentNameAndSubjectName(@RequestParam("nameStudent") String nameStudent, @RequestParam("nameSubject") String nameSubject){
         return studentSubjectService.findStudentPerformanceByStudentNameAndSubjectName(nameStudent,nameSubject);
     }
 

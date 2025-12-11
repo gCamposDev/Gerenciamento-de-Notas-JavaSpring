@@ -25,7 +25,7 @@ public class SubjectController {
         return subjectService.findSubjectById(id);
     }
 
-    @GetMapping("/name")
+    @GetMapping(params = "name")
     public Subject findSubjectByName(@RequestParam String name){
         return subjectService.findSubjectByName(name);
     }

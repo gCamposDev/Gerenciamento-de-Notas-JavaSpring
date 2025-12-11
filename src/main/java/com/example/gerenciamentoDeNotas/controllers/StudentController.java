@@ -24,13 +24,13 @@ public class StudentController {
         return studentService.findStudentById(id);
     }
 
-    @GetMapping("/name")
+    @GetMapping(params= "name")
     public Student findStudentByName(@RequestParam String name){
         return studentService.findStudentByName(name);
     }
 
-    @GetMapping("/class")
-    public List<Student> findAllStudentsByClass(@RequestParam String class_){
+    @GetMapping(params = "class")
+    public List<Student> findAllStudentsByClass(@RequestParam("class") String class_){
         return studentService.findAllStudentsByClass(class_);
     }
 
