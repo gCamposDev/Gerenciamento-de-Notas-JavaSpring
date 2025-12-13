@@ -34,16 +34,16 @@ public class StudentSubjectService {
 
     }
 
-    public List<StudentPerformanceDTO> findAllStudentPerformances() {
-        return studentSubjectRepository.findAllStudentPerformances();
+    public List<StudentPerformanceDTO> findAllStudentsPerformances() {
+        return studentSubjectRepository.findAllStudentsPerformances();
     }
 
-    public List<StudentPerformanceDTO> findStudentPerformanceByStudentId(Long id) {
-        return studentSubjectRepository.findStudentPerformanceByStudentId(id);
+    public List<StudentPerformanceDTO> findStudentPerformancesByStudentId(Long id) {
+        return studentSubjectRepository.findStudentPerformancesByStudentId(id);
     }
 
-    public List<StudentPerformanceDTO> findStudentPerformanceByStudentName(String nameStudent) {
-        return studentSubjectRepository.findStudentPerformanceByStudentName(nameStudent);
+    public List<StudentPerformanceDTO> findStudentPerformancesByStudentName(String nameStudent) {
+        return studentSubjectRepository.findStudentPerformancesByStudentName(nameStudent);
     }
 
     public StudentPerformanceDTO findStudentPerformanceByStudentNameAndSubjectName(String nameStudent, String nameSubject) {

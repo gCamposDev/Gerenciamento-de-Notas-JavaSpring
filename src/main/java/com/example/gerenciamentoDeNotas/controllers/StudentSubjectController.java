@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/student-performances")
+@RequestMapping("/students-performances")
 public class StudentSubjectController {
 
     @Autowired
@@ -20,18 +20,18 @@ public class StudentSubjectController {
     }
 
     @GetMapping
-    public List<StudentPerformanceDTO> findAllStudentPerformances(){
-        return studentSubjectService.findAllStudentPerformances();
+    public List<StudentPerformanceDTO> findAllStudentsPerformances(){
+        return studentSubjectService.findAllStudentsPerformances();
     }
 
     @GetMapping("/{id}")
-    public List<StudentPerformanceDTO> findStudentPerformanceByStudentId(@PathVariable Long id){
-        return studentSubjectService.findStudentPerformanceByStudentId(id);
+    public List<StudentPerformanceDTO> findStudentPerformancesByStudentId(@PathVariable Long id){
+        return studentSubjectService.findStudentPerformancesByStudentId(id);
     }
 
     @GetMapping(params = "nameStudent")
-    public List<StudentPerformanceDTO> findStudentPerformanceByStudentName(@RequestParam String nameStudent){
-        return studentSubjectService.findStudentPerformanceByStudentName(nameStudent);
+    public List<StudentPerformanceDTO> findStudentPerformancesByStudentName(@RequestParam String nameStudent){
+        return studentSubjectService.findStudentPerformancesByStudentName(nameStudent);
     }
 
     @GetMapping(params = {"nameStudent","nameSubject"})
