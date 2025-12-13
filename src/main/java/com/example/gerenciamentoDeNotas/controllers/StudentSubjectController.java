@@ -29,14 +29,19 @@ public class StudentSubjectController {
         return studentSubjectService.findStudentPerformanceByStudentId(id);
     }
 
-    @GetMapping(params = "name")
-    public List<StudentPerformanceDTO> findStudentPerformanceByStudentName(@RequestParam String name){
-        return studentSubjectService.findStudentPerformanceByStudentName(name);
+    @GetMapping(params = "nameStudent")
+    public List<StudentPerformanceDTO> findStudentPerformanceByStudentName(@RequestParam String nameStudent){
+        return studentSubjectService.findStudentPerformanceByStudentName(nameStudent);
     }
 
     @GetMapping(params = {"nameStudent","nameSubject"})
     public StudentPerformanceDTO findStudentPerformanceByStudentNameAndSubjectName(@RequestParam("nameStudent") String nameStudent, @RequestParam("nameSubject") String nameSubject){
         return studentSubjectService.findStudentPerformanceByStudentNameAndSubjectName(nameStudent,nameSubject);
+    }
+
+    @GetMapping(params = "nameSubject")
+    public List<StudentPerformanceDTO> findStudentsPerformancesBySubjectName(@RequestParam String nameSubject){
+        return studentSubjectService.findStudentsPerformancesBySubjectName(nameSubject);
     }
 
 }

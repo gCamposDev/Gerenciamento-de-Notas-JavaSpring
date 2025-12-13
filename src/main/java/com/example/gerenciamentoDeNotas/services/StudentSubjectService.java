@@ -42,11 +42,15 @@ public class StudentSubjectService {
         return studentSubjectRepository.findStudentPerformanceByStudentId(id);
     }
 
-    public List<StudentPerformanceDTO> findStudentPerformanceByStudentName(String name) {
-        return studentSubjectRepository.findStudentPerformanceByStudentName(name);
+    public List<StudentPerformanceDTO> findStudentPerformanceByStudentName(String nameStudent) {
+        return studentSubjectRepository.findStudentPerformanceByStudentName(nameStudent);
     }
 
     public StudentPerformanceDTO findStudentPerformanceByStudentNameAndSubjectName(String nameStudent, String nameSubject) {
         return studentSubjectRepository.findStudentPerformanceByStudentNameAndSubjectName(nameStudent, nameSubject);
+    }
+
+    public List<StudentPerformanceDTO> findStudentsPerformancesBySubjectName(String nameSubject){
+        return studentSubjectRepository.findStudentsPerformancesBySubjectName(nameSubject);
     }
 }
